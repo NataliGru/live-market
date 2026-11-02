@@ -14,7 +14,7 @@ Husky, lint-staged, and a clear `src` folder structure.
 - **Tailwind CSS** - styling is handled with Tailwind.
 - **next-intl** - internationalized routing and translations are already
   configured.
-- **ESLint** - code linting, import sorting, and unused import checks.
+- **ESLint** - code linting and unused import checks.
 - **Prettier** - consistent formatting for code, imports, and Tailwind classes.
 - **Husky + lint-staged** - staged files are checked and formatted before each
   commit.
@@ -26,6 +26,11 @@ Husky, lint-staged, and a clear `src` folder structure.
   locales.
 
 ## Getting Started
+
+In VS Code, install the recommended Prettier and ESLint extensions. Workspace
+settings enable formatting and ESLint fixes on save. Prettier sorts imports
+in this order: React, Next.js, third-party packages, `@/` aliases, relative
+imports. Side-effect imports keep their order.
 
 Install dependencies:
 

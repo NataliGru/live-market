@@ -63,31 +63,7 @@ const eslintConfig = [
       // Automatically remove unused imports
       'unused-imports/no-unused-imports': 'warn',
 
-      // Sort imports into consistent groups
-      'simple-import-sort/imports': [
-        'error',
-        {
-          groups: [
-            // React / Next / third-party packages
-            ['^react$', '^next', '^@?\\w'],
-
-            // Internal aliases
-            ['^@/'],
-
-            // Parent imports
-            ['^\\.\\.(?!/?$)', '^\\.\\./?$'],
-
-            // Relative imports
-            ['^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$'],
-
-            // Styles
-            ['^.+\\.css$'],
-          ],
-        },
-      ],
-
-      // Sort exports
-      'simple-import-sort/exports': 'error',
+      // Prettier owns import sorting to keep formatting on save consistent.
 
       // Allow "any" when needed
       '@typescript-eslint/no-explicit-any': 'off',

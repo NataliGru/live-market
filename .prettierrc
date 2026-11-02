@@ -1,11 +1,12 @@
 {
   "plugins": [
-    "prettier-plugin-tailwindcss",
-    "@trivago/prettier-plugin-sort-imports"
+    "@trivago/prettier-plugin-sort-imports",
+    "prettier-plugin-tailwindcss"
   ],
   "importOrder": ["^react$", "^next", "<THIRD_PARTY_MODULES>", "^@/", "^[./]"],
   "importOrderSeparation": true,
   "importOrderSortSpecifiers": true,
+  "importOrderSideEffects": false,
   "semi": true,
   "tabWidth": 2,
   "printWidth": 80,

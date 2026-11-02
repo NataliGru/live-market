@@ -108,7 +108,7 @@ src/
     [locale]/
   localization/
     en/
-    ua/
+    uk/
   shared/
     components/
     constants/
@@ -132,7 +132,7 @@ The template includes `next-intl` and is already configured for multiple
 languages:
 
 - `en` - English, used as the default locale.
-- `ua` - Ukrainian.
+- `uk` - Ukrainian.
 
 Localized routes live under:
 
@@ -145,7 +145,7 @@ Translation files live under:
 ```text
 src/localization/
   en/
-  ua/
+  uk/
 ```
 
 The i18n configuration is located in:
@@ -165,7 +165,7 @@ To add a new language:
 
 1. Add the locale code to `locales` in `src/shared/lib/i18n/routing.ts`.
 2. Create a new folder in `src/localization`.
-3. Add the same translation files that already exist for `en` and `ua`.
+3. Add the same translation files that already exist for `en` and `uk`.
 4. Import and register the new messages in `src/shared/lib/i18n/request.ts`.
 5. Update the language selector options if needed.
 

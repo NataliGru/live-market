@@ -1,12 +1,10 @@
+import './globals.css';
+
+import { Montserrat_Alternates, Roboto_Serif } from 'next/font/google';
+import { getLocale } from 'next-intl/server';
 import { ReactNode } from 'react';
 
-import { getLocale } from 'next-intl/server';
-import { Montserrat_Alternates, Roboto_Serif } from 'next/font/google';
-
-import { ProvidersLayout } from '@/providers';
 import { cn } from '@/shared';
-
-import './globals.css';
 
 type Props = {
   children: ReactNode;
@@ -36,7 +34,7 @@ export default async function RootLayout({ children }: Props) {
           'flex h-full flex-col',
         )}
       >
-        <ProvidersLayout>{children}</ProvidersLayout>
+        {children}
       </body>
     </html>
   );

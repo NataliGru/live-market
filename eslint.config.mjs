@@ -1,6 +1,7 @@
 import js from '@eslint/js';
 import nextVitals from 'eslint-config-next/core-web-vitals';
 import unusedImports from 'eslint-plugin-unused-imports';
+import simpleImportSort from 'eslint-plugin-simple-import-sort';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
 
@@ -42,6 +43,7 @@ const eslintConfig = [
 
     plugins: {
       'unused-imports': unusedImports,
+      'simple-import-sort': simpleImportSort,
     },
 
     rules: {
@@ -63,10 +65,10 @@ const eslintConfig = [
       // Automatically remove unused imports
       'unused-imports/no-unused-imports': 'warn',
 
-      // Prettier owns import sorting to keep formatting on save consistent.
+      'simple-import-sort/imports': 'error',
+      'simple-import-sort/exports': 'error',
 
-      // Allow "any" when needed
-      '@typescript-eslint/no-explicit-any': 'off',
+      '@typescript-eslint/no-explicit-any': 'warn',
     },
   },
 ];

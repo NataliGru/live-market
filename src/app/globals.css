@@ -1,32 +1,162 @@
 @import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+/* ========================================
+   Light Theme
+======================================== */
 
 :root {
+  /* PulseMarket colors */
+  --background: #f8fafc;
+  --surface: #ffffff;
+  --card: #ffffff;
+  --border: #e2e8f0;
+
+  --text-primary: #0f172a;
+  --text-secondary: #64748b;
+
+  --success: #16a34a;
+  --danger: #dc2626;
+  --brand: #3b82f6;
+
+  /* shadcn/ui semantic colors */
+  --foreground: var(--text-primary);
+
+  --card-foreground: var(--text-primary);
+
+  --popover: var(--surface);
+  --popover-foreground: var(--text-primary);
+
+  --primary: var(--brand);
+  --primary-foreground: #ffffff;
+
+  --secondary: #f1f5f9;
+  --secondary-foreground: var(--text-primary);
+
+  --muted: #f1f5f9;
+  --muted-foreground: var(--text-secondary);
+
+  --accent: #e2e8f0;
+  --accent-foreground: var(--text-primary);
+
+  --destructive: var(--danger);
+
+  --input: var(--border);
+  --ring: var(--brand);
+
+  /* shadcn/ui radius */
+  --radius: 0.625rem;
+}
+
+/* ========================================
+   Dark Theme
+======================================== */
+
+.dark {
+  /* PulseMarket colors */
   --background: #0b0f14;
   --surface: #121821;
   --card: #1a222b;
   --border: #2a3441;
+
   --text-primary: #f8fafc;
-  --text-secondary: #94a3bb;
+  --text-secondary: #94a3b8;
+
   --success: #22c55e;
   --danger: #ef4444;
-  --accent: #3b82f6;
+  --brand: #3b82f6;
+
+  /* shadcn/ui semantic colors */
+  --foreground: var(--text-primary);
+
+  --card-foreground: var(--text-primary);
+
+  --popover: var(--surface);
+  --popover-foreground: var(--text-primary);
+
+  --primary: var(--brand);
+  --primary-foreground: #ffffff;
+
+  --secondary: var(--card);
+  --secondary-foreground: var(--text-primary);
+
+  --muted: var(--card);
+  --muted-foreground: var(--text-secondary);
+
+  --accent: #243247;
+  --accent-foreground: var(--text-primary);
+
+  --destructive: var(--danger);
+
+  --input: var(--border);
+  --ring: var(--brand);
 }
 
+/* ========================================
+   Tailwind Theme Tokens
+======================================== */
+
 @theme inline {
+  /* PulseMarket colors */
   --color-background: var(--background);
   --color-surface: var(--surface);
   --color-card: var(--card);
   --color-border: var(--border);
+
   --color-text-primary: var(--text-primary);
   --color-text-secondary: var(--text-secondary);
+
   --color-success: var(--success);
   --color-danger: var(--danger);
+  --color-brand: var(--brand);
+
+  /* shadcn/ui colors */
+  --color-foreground: var(--foreground);
+
+  --color-card-foreground: var(--card-foreground);
+
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
   --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-destructive: var(--destructive);
+
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Fonts */
+  --font-heading: var(--font-sans);
+
+  /* shadcn/ui radii */
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-@theme {
-  /* Typography Tokens start*/
+/* ========================================
+   Typography & Custom Tokens
+======================================== */
 
+@theme {
+  /* Typography */
   --text-heading-lg: 1.75rem;
   --text-heading-lg--line-height: 2.25rem;
   --text-heading-lg--font-weight: 600;
@@ -47,18 +177,48 @@
   --text-caption--line-height: 1rem;
   --text-caption--font-weight: 400;
 
-  /* Typography Tokens end*/
-
+  /* PulseMarket card radius */
   --radius-card: 1rem;
 }
 
-body {
-  background: var(--background);
-  color: var(--text-primary);
+/* ========================================
+   Base Styles
+======================================== */
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    @apply font-sans;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
 }
+
+/* ========================================
+   Component Styles
+======================================== */
 
 @layer components {
   .control-base {
     @apply text-body min-h-10 px-4;
+  }
+}
+
+/* ========================================
+   Custom Utilities
+======================================== */
+
+@utility transition-all-300 {
+  transition-property: all;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
+
+  @media (prefers-reduced-motion: reduce) {
+    transition-duration: 0.01ms;
   }
 }

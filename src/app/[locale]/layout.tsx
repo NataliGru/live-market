@@ -1,5 +1,6 @@
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTimeZone, setRequestLocale } from 'next-intl/server';
+import { ThemeProvider } from 'next-themes';
 
 import { routing } from '@/shared';
 
@@ -40,7 +41,14 @@ export default async function LocaleLayout({
       messages={messages}
       timeZone={timeZone}
     >
-      <AppShell>{children}</AppShell>
+      <ThemeProvider
+        attribute='class'
+        defaultTheme='dark'
+        disableTransitionOnChange={false}
+        enableSystem={false}
+      >
+        <AppShell>{children}</AppShell>
+      </ThemeProvider>
     </NextIntlClientProvider>
   );
 }

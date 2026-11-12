@@ -1,15 +1,9 @@
-import { useTranslations } from 'next-intl';
+import { Watchlist } from '@/widgets/market-watchlist/ui/watchlist';
 
-import { LocaleSwitcher } from '@/features';
-
-export default function HomeLocalized() {
-  const t = useTranslations();
-
+export default function Home() {
   return (
-    <div className='flex flex-row w-full justify-between gap-4 p-4 items-center'>
-      <LocaleSwitcher />
-
-      <h1 className='flex-1 text-center'>result: {t('home.title')}</h1>
+    <div className='flex flex-row gap-3'>
+      <Watchlist />
     </div>
   );
 }

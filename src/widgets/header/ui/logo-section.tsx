@@ -9,12 +9,16 @@ export const LogoSection = () => {
       href={Links.index}
       className='transition-all-300 flex flex-row items-center gap-3 hover:scale-105'
     >
-      <ChartNoAxesCombined className='text-success size-10 lg:size-12' />
+      <ChartNoAxesCombined className='text-success size-8 sm:size-10 lg:size-12' />
 
       <div className='flex flex-col gap-1'>
-        <h2 className='text-heading-sm lg:text-heading-md'>PulseMarket</h2>
+        <h2 className='sm:text-heading-sm lg:text-heading-md text-md font-medium'>
+          PulseMarket
+        </h2>
 
-        <p className='text-caption text-text-secondary'>Live market monitor</p>
+        <p className='sm:text-caption text-text-secondary text-[11px]'>
+          Live market monitor
+        </p>
       </div>
     </Link>
   );

@@ -2,7 +2,7 @@
 import Image from 'next/image';
 
 import { MarketPair } from '@/entities/market/model/types';
-import { cn } from '@/shared';
+import { cn, getFormattedPrice } from '@/shared';
 
 import { WatchlistCardChart } from './watchlist-card-chart';
 
@@ -13,10 +13,7 @@ interface WatchlistCardProps {
 export const WatchlistCard = ({ watchlistItem }: WatchlistCardProps) => {
   const isPositive = watchlistItem.changePercent > 0;
 
-  const formattedPrice = new Intl.NumberFormat('en-US', {
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
-  }).format(watchlistItem.price);
+  const formattedPrice = getFormattedPrice(watchlistItem.price);
 
   const prices = watchlistItem.sparkline.map((price) => ({
     price,

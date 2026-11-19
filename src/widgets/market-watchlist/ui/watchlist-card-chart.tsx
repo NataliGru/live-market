@@ -24,6 +24,7 @@ export const WatchlistCardChart = ({
   const color = isPositive ? 'var(--success)' : 'var(--danger)';
 
   const values = prices.map(({ price }) => price);
+
   const min = Math.min(...values);
   const max = Math.max(...values);
 

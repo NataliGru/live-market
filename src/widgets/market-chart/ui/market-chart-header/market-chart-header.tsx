@@ -17,9 +17,9 @@ export const MarketChartHeader = () => {
   );
 
   return (
-    <div className='flex flex-row justify-between gap-7'>
+    <div className='flex flex-col justify-between gap-7 lg:flex-row'>
       <div className='flex flex-col gap-4'>
-        <div className='flex flex-row gap-5'>
+        <div className='flex flex-row justify-between gap-5'>
           <MarketChartHeaderSymbol
             name={MOCK_MARKET_CHART.name}
             pair={MOCK_MARKET_CHART.pair}
@@ -37,7 +37,7 @@ export const MarketChartHeader = () => {
         />
       </div>
 
-      <div className='flex flex-col justify-between gap-4'>
+      <div className='flex flex-col justify-between gap-4 md:flex-row md:items-center lg:flex-col'>
         <MarketChartHeaderIntervals
           selectedInterval={selectedInterval}
           onSelectInterval={setSelectedInterval}

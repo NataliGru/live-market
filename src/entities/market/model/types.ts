@@ -43,3 +43,14 @@ export interface MarketChartData {
   streamStatus: StreamStatus;
   chartData: ChartPoint[];
 }
+
+export type TradeSide = 'buy' | 'sell';
+
+export interface RecentTrade {
+  id: number;
+  symbol: MarketSymbol;
+  timestamp: number;
+  price: number;
+  quantity: number;
+  side: TradeSide;
+}
